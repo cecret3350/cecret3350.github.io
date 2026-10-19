@@ -25,7 +25,6 @@
         <div class="nav-links" id="nav-links">
           <a href="#publications">Publications</a>
           <a href="#education">Education</a>
-          <a href="#experience">Experience</a>
           <a href="#service">Service</a>
         </div>
       </nav>
@@ -47,11 +46,14 @@
               and my B.E. from the same university in 2022. During my master’s study, I also worked
               closely with <a href="https://hezw2016.github.io/ZeweiHe.github.io/" target="_blank" rel="noreferrer">Prof. Zewei He</a>.
             </p>
+            <!-- Shanghai AI Lab experience temporarily hidden.
             <p>
               I am also a research intern at Shanghai Artificial Intelligence Laboratory, working
               with Yujin Wang and <a href="https://guoshi28.github.io/" target="_blank" rel="noreferrer">Dr. Shi Guo</a>.
-              My current research interests include generative
-              models and computational photography. 
+            </p>
+            -->
+            <p>
+              My current research interests include generative models and computational photography.
             </p>
             <p>  
               I am always happy to collaborate on exciting research—please feel free to <a href="mailto:zxchen3350@gmail.com">reach out</a>.
@@ -95,6 +97,7 @@
             <div>
               <h2>Selected research</h2>
               <p>Research in generative models and computational photography.</p>
+              <p class="pub-interaction-note">Hover over a thumbnail—or tap it—to reveal the result.</p>
             </div>
             <div class="filter-controls" role="group" aria-label="筛选论文">
               <button class="filter-btn active" type="button" data-filter="selected" aria-pressed="true">Selected</button>
@@ -104,12 +107,40 @@
 
           <div class="publication-list" aria-live="polite">
             <article class="publication" data-selected="true">
-              <div class="pub-visual visual-systems" aria-hidden="true">
-                <span class="visual-grid"></span><span class="orb orb-a"></span><span class="orb orb-b"></span>
-                <b>ANY<br/>STITCH</b>
-              </div>
+              <button class="pub-visual pub-visual-tailsteer" type="button" aria-label="TailSteer editing sequence. Hover or press to advance the same subject from turn one through turns four, seven, and ten." aria-pressed="false">
+                <img class="pub-image pub-input" src="assets/publications/tailsteer-input.jpg" alt="" loading="lazy" />
+                <img class="pub-image tailsteer-frame tailsteer-turn-4" src="assets/publications/tailsteer-turn4.jpg" alt="" loading="lazy" />
+                <img class="pub-image tailsteer-frame tailsteer-turn-7" src="assets/publications/tailsteer-turn7.jpg" alt="" loading="lazy" />
+                <img class="pub-image tailsteer-frame tailsteer-turn-10" src="assets/publications/tailsteer-turn10.jpg" alt="" loading="lazy" />
+                <span class="pub-state pub-state-input">Turn 1</span>
+                <span class="pub-state pub-state-result tailsteer-stage" aria-hidden="true">TailSteer · <b class="tailsteer-label-4">Turn 4</b><b class="tailsteer-label-7">Turn 7</b><b class="tailsteer-label-10">Turn 10</b></span>
+              </button>
               <div class="pub-details">
-                <p class="pub-meta"><span>01</span> SIGGRAPH Asia 2026 · ACM TOG</p>
+                <p class="pub-meta"><span>01</span> Under Review · 2026</p>
+                <h3>TailSteer: Trajectory-Tail Steering for Drift-Resistant Multi-turn Image Editing</h3>
+                <p class="authors">Ruikang Li, <strong>Zixuan Chen</strong>, Jiarui Wu, Mingde Yao, Yiyuan Zhang, Yujin Wang, Hanming Deng, Lewei Lu, Tianfan Xue</p>
+                <p class="pub-abstract">Drift-resistant multi-turn image editing by steering the tail of pretrained editors’ denoising trajectories.</p>
+                <div class="pub-links"><span>Under review</span></div>
+              </div>
+            </article>
+
+            <article class="publication" data-selected="true">
+              <button class="pub-visual pub-visual-anystitch" type="button" aria-label="AnyStitch visual comparison. Hover or press to transform six input views into the stitched panorama." aria-pressed="false">
+                <span class="pub-image pub-input anystitch-views" aria-hidden="true">
+                  <span class="anystitch-card anystitch-card-1"><span>1</span></span>
+                  <span class="anystitch-card anystitch-card-2"><span>2</span></span>
+                  <span class="anystitch-card anystitch-card-3"><span>3</span></span>
+                  <span class="anystitch-card anystitch-card-4"><span>4</span></span>
+                  <span class="anystitch-more">+2</span>
+                </span>
+                <span class="pub-image pub-result anystitch-panorama" aria-hidden="true">
+                  <img src="assets/publications/anystitch-panorama.jpg" alt="" loading="lazy" />
+                </span>
+                <span class="pub-state pub-state-input">6 views</span>
+                <span class="pub-state pub-state-result">Stitched panorama</span>
+              </button>
+              <div class="pub-details">
+                <p class="pub-meta"><span>02</span> SIGGRAPH Asia 2026 · ACM TOG</p>
                 <h3>AnyStitch: Generative Large-Parallax Image Stitching</h3>
                 <p class="authors"><strong>Zixuan Chen</strong>, Lingen Li, Junhao Zhuang, Ruikang Li, Tianfan Xue</p>
                 <p class="pub-abstract">Generative image stitching under large parallax using bi-level 3D projected RoPE.</p>
@@ -118,12 +149,14 @@
             </article>
 
             <article class="publication extra-publication" data-selected="false" hidden>
-              <div class="pub-visual visual-space" aria-hidden="true">
-                <span class="cube cube-one"></span><span class="cube cube-two"></span><span class="horizon"></span>
-                <b>SWIFT<br/>FUSION</b>
-              </div>
+              <button class="pub-visual" type="button" aria-label="SwiftFusion visual comparison. Hover or press to reveal the HDR result." aria-pressed="false">
+                <img class="pub-image pub-input" src="assets/publications/swiftfusion-input.jpg" alt="" loading="lazy" />
+                <img class="pub-image pub-result" src="assets/publications/swiftfusion-result.jpg" alt="" loading="lazy" />
+                <span class="pub-state pub-state-input">Input</span>
+                <span class="pub-state pub-state-result">Result</span>
+              </button>
               <div class="pub-details">
-                <p class="pub-meta"><span>02</span> SIGGRAPH Asia 2026 · ACM TOG</p>
+                <p class="pub-meta"><span>03</span> SIGGRAPH Asia 2026 · ACM TOG</p>
                 <h3>SwiftFusion: Towards Motion-Robust and Efficient 4K HDR Fusion</h3>
                 <p class="authors">Yichen Bian, <strong>Zixuan Chen</strong>, Yujin Wang, Xin Cai, Shi Guo, Junhao Zhuang, Leilei Gu, Tianfan Xue</p>
                 <p class="pub-abstract">Efficient high-resolution HDR fusion designed to remain robust under scene motion.</p>
@@ -132,12 +165,14 @@
             </article>
 
             <article class="publication extra-publication" data-selected="false" hidden>
-              <div class="pub-visual visual-motion" aria-hidden="true">
-                <span class="motion-line line-one"></span><span class="motion-line line-two"></span><span class="motion-line line-three"></span>
-                <b>DIFF<br/>UR3</b>
-              </div>
+              <button class="pub-visual" type="button" aria-label="DiffUR3 visual comparison. Hover or press to reveal the restored result." aria-pressed="false">
+                <img class="pub-image pub-input" src="assets/publications/diffur3-input.jpg" alt="" loading="lazy" />
+                <img class="pub-image pub-result" src="assets/publications/diffur3-result.jpg" alt="" loading="lazy" />
+                <span class="pub-state pub-state-input">Input</span>
+                <span class="pub-state pub-state-result">Result</span>
+              </button>
               <div class="pub-details">
-                <p class="pub-meta"><span>03</span> ECCV 2026</p>
+                <p class="pub-meta"><span>04</span> ECCV 2026</p>
                 <h3>Unified Removal of Raindrops and Reflections: A New Benchmark and a Novel Pipeline</h3>
                 <p class="authors">Xingyu Liu, Zewei He, Yu Chen, Chunyu Zhu, <strong>Zixuan Chen</strong>, Xing Luo, Zhe-Ming Lu</p>
                 <p class="pub-abstract">A unified benchmark and pipeline for removing two common types of image degradation.</p>
@@ -146,11 +181,14 @@
             </article>
 
             <article class="publication extra-publication" data-selected="false" hidden>
-              <div class="pub-visual visual-language" aria-hidden="true">
-                <span class="word word-one">GLASS</span><span class="word word-two">GAP</span><span class="word word-three">FREE</span>
-              </div>
+              <button class="pub-visual" type="button" aria-label="GFRRN visual comparison. Hover or press to reveal the reflection-free result." aria-pressed="false">
+                <img class="pub-image pub-input" src="assets/publications/gfrrn-input.jpg" alt="" loading="lazy" />
+                <img class="pub-image pub-result" src="assets/publications/gfrrn-result.jpg" alt="" loading="lazy" />
+                <span class="pub-state pub-state-input">Input</span>
+                <span class="pub-state pub-state-result">Result</span>
+              </button>
               <div class="pub-details">
-                <p class="pub-meta"><span>04</span> CVPR 2026</p>
+                <p class="pub-meta"><span>05</span> CVPR 2026</p>
                 <h3>GFRRN: Explore the Gaps in Single Image Reflection Removal</h3>
                 <p class="authors">Yu Chen, Zewei He, Xingyu Liu, <strong>Zixuan Chen</strong>, Zhe-Ming Lu</p>
                 <p class="pub-abstract">A reflection-removal framework focused on gaps in existing single-image methods.</p>
@@ -159,12 +197,14 @@
             </article>
 
             <article class="publication" data-selected="true">
-              <div class="pub-visual visual-human" aria-hidden="true">
-                <span class="human-ring ring-one"></span><span class="human-ring ring-two"></span><span class="human-dot"></span>
-                <b>ULTRA<br/>FUSION</b>
-              </div>
+              <button class="pub-visual" type="button" aria-label="UltraFusion visual comparison. Hover or press to reveal the HDR result." aria-pressed="false">
+                <img class="pub-image pub-input" src="assets/publications/ultrafusion-input.jpg" alt="" loading="lazy" />
+                <img class="pub-image pub-result" src="assets/publications/ultrafusion-result.jpg" alt="" loading="lazy" />
+                <span class="pub-state pub-state-input">Input</span>
+                <span class="pub-state pub-state-result">Result</span>
+              </button>
               <div class="pub-details">
-                <p class="pub-meta"><span>05</span> CVPR 2025 · Highlight · Best Demo Honorable Mention</p>
+                <p class="pub-meta"><span>06</span> CVPR 2025 · Highlight · Best Demo Honorable Mention</p>
                 <h3>UltraFusion: Ultra High Dynamic Imaging Using Exposure Fusion</h3>
                 <p class="authors"><strong>Zixuan Chen</strong>, Yujin Wang, Xin Cai, Zhiyuan You, Zhe-Ming Lu, Fan Zhang, Shi Guo, Tianfan Xue</p>
                 <p class="pub-abstract">Ultra-high-dynamic-range imaging formulated as a guided inpainting and exposure-fusion problem.</p>
@@ -173,12 +213,14 @@
             </article>
 
             <article class="publication" data-selected="true">
-              <div class="pub-visual visual-space" aria-hidden="true">
-                <span class="cube cube-one"></span><span class="cube cube-two"></span><span class="horizon"></span>
-                <b>PROMPT<br/>DEHAZE</b>
-              </div>
+              <button class="pub-visual" type="button" aria-label="Prompt-Based Test-Time Dehazing visual comparison. Hover or press to reveal the dehazed result." aria-pressed="false">
+                <img class="pub-image pub-input" src="assets/publications/pttd-input.jpg" alt="" loading="lazy" />
+                <img class="pub-image pub-result" src="assets/publications/pttd-result.jpg" alt="" loading="lazy" />
+                <span class="pub-state pub-state-input">Input</span>
+                <span class="pub-state pub-state-result">Result</span>
+              </button>
               <div class="pub-details">
-                <p class="pub-meta"><span>06</span> ECCV 2024</p>
+                <p class="pub-meta"><span>07</span> ECCV 2024</p>
                 <h3>Prompt-Based Test-Time Real Image Dehazing: A Novel Pipeline</h3>
                 <p class="authors"><strong>Zixuan Chen</strong>, Zewei He, Ziqian Lu, Xuecheng Sun, Zhe-Ming Lu</p>
                 <p class="pub-abstract">Training-free, model-agnostic domain adaptation for real image dehazing using statistical prompts.</p>
@@ -187,12 +229,14 @@
             </article>
 
             <article class="publication" data-selected="true">
-              <div class="pub-visual visual-motion" aria-hidden="true">
-                <span class="motion-line line-one"></span><span class="motion-line line-two"></span><span class="motion-line line-three"></span>
-                <b>DEA<br/>NET</b>
-              </div>
+              <button class="pub-visual pub-visual-diagram" type="button" aria-label="DEA-Net DEConv comparison. Hover or press to switch from the five training-time convolution branches to the single inference-time convolution." aria-pressed="false">
+                <img class="pub-image pub-input" src="assets/publications/deanet-training.svg" alt="" loading="lazy" />
+                <img class="pub-image pub-result" src="assets/publications/deanet-inference.svg" alt="" loading="lazy" />
+                <span class="pub-state pub-state-input">Training · 5 convs</span>
+                <span class="pub-state pub-state-result">Inference · 1 conv</span>
+              </button>
               <div class="pub-details">
-                <p class="pub-meta"><span>07</span> IEEE TIP 2024 · 1K+ Citations</p>
+                <p class="pub-meta"><span>08</span> IEEE TIP 2024 · 1K+ Citations</p>
                 <h3>DEA-Net: Single Image Dehazing Based on Detail-Enhanced Convolution and Content-Guided Attention</h3>
                 <p class="authors"><strong>Zixuan Chen</strong>, Zewei He, Zhe-Ming Lu</p>
                 <p class="pub-abstract">A lightweight dehazing network built around re-parameterizable detail-enhanced convolution.</p>
@@ -238,6 +282,7 @@
         </div>
       </section>
 
+      <!-- Shanghai AI Lab experience temporarily hidden.
       <section class="section experience reveal" id="experience">
         <div class="section-label"><span>03</span> Experience</div>
         <div class="section-content">
@@ -252,9 +297,10 @@
           </div>
         </div>
       </section>
+      -->
 
       <section class="section service reveal" id="service">
-        <div class="section-label"><span>04</span> Service &amp; honors</div>
+        <div class="section-label"><span>03</span> Service &amp; honors</div>
         <div class="section-content split-lists">
           <div>
             <h2>Academic service</h2>

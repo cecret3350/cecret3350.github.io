@@ -15,6 +15,19 @@ navLinks?.querySelectorAll('a').forEach((link) => {
 
 const filterButtons = document.querySelectorAll('.filter-btn');
 const publications = document.querySelectorAll('.publication');
+const publicationVisuals = document.querySelectorAll('.pub-visual');
+
+publicationVisuals.forEach((visual) => {
+  visual.addEventListener('click', () => {
+    const isShowingResult = visual.classList.toggle('is-result');
+    visual.setAttribute('aria-pressed', String(isShowingResult));
+  });
+
+  visual.addEventListener('blur', () => {
+    visual.classList.remove('is-result');
+    visual.setAttribute('aria-pressed', 'false');
+  });
+});
 
 filterButtons.forEach((button) => {
   button.addEventListener('click', () => {
