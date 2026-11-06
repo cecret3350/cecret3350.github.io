@@ -105,28 +105,21 @@ button { font: inherit; }
 .tailsteer-model-label-result { background: rgba(193,77,41,.82); }
 .tailsteer-stage { min-width: 47px; }
 .tailsteer-stage > b { font: inherit; }
-.pub-visual-anystitch { background: #e8e4dc; }
-.pub-visual-anystitch .pub-input { transform: scale(1.01); }
+.pub-visual-anystitch { background: #1c2826; }
+.pub-visual-anystitch .pub-input { transform: scale(1.005); }
 .publication:hover .pub-visual-anystitch .pub-input,
 .pub-visual-anystitch:focus-visible .pub-input,
-.pub-visual-anystitch.is-result .pub-input { transform: scale(1.035); }
-.pub-visual-anystitch .pub-result { transform: scale(1.045); }
+.pub-visual-anystitch.is-result .pub-input { transform: scale(1.015); }
+.pub-visual-anystitch .pub-result { transform: scale(1.02); }
 .publication:hover .pub-visual-anystitch .pub-result,
 .pub-visual-anystitch:focus-visible .pub-result,
 .pub-visual-anystitch.is-result .pub-result { transform: scale(1); }
-.anystitch-views { background: linear-gradient(135deg, #f1eee7, #d7d1c5); }
-.anystitch-views::before { content: ""; position: absolute; left: 7%; right: 8%; bottom: 28%; border-top: 1px dashed rgba(52,64,61,.35); transform: rotate(-8deg); }
-.anystitch-card { position: absolute; width: 31%; height: 43%; border: 3px solid #fffdfa; border-radius: 2px; background-image: url("assets/publications/anystitch-source.jpg"); background-repeat: no-repeat; background-size: 580% auto; box-shadow: 0 7px 13px rgba(26,35,33,.2); }
-.anystitch-card > span { position: absolute; top: 5px; left: 5px; display: grid; width: 13px; height: 13px; place-items: center; border-radius: 50%; background: rgba(23,31,30,.82); color: white; font-size: 7px; font-weight: 800; line-height: 1; }
-.anystitch-card-1 { top: 34%; left: 4%; background-position: 1.2% 36%; transform: rotate(-7deg); }
-.anystitch-card-2 { top: 19%; left: 27%; z-index: 1; background-position: 22.2% 36%; transform: rotate(2deg); }
-.anystitch-card-3 { top: 33%; left: 50%; z-index: 2; background-position: 1.2% 58.4%; transform: rotate(-3deg); }
-.anystitch-card-4 { top: 18%; left: 72%; z-index: 3; background-position: 22.2% 58.4%; transform: rotate(6deg); }
-.anystitch-more { position: absolute; right: 5%; bottom: 12%; z-index: 4; display: grid; width: 27px; height: 27px; place-items: center; border-radius: 50%; background: var(--accent); color: white; box-shadow: 0 5px 10px rgba(26,35,33,.2); font-size: 9px; font-weight: 800; }
-.anystitch-panorama { display: grid; place-items: center; background-image: linear-gradient(rgba(19,30,29,.14), rgba(19,30,29,.14)), url("assets/publications/anystitch-panorama.jpg"); background-position: center; background-size: cover; }
-.anystitch-panorama::before { content: ""; position: absolute; inset: -12px; background: inherit; filter: blur(9px); transform: scale(1.08); }
-.anystitch-panorama::after { content: ""; position: absolute; inset: 0; background: rgba(15,22,21,.08); }
-.anystitch-panorama img { position: relative; z-index: 1; display: block; width: 100%; height: auto; box-shadow: 0 0 0 1px rgba(255,255,255,.28), 0 7px 18px rgba(8,15,14,.28); }
+.anystitch-input-grid { background-color: #d8d3ca; background-image: url("assets/publications/anystitch-source.jpg"); background-position: left 48%; background-repeat: no-repeat; background-size: 282% auto; }
+.anystitch-input-grid::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,.28), inset 0 -24px 28px rgba(14,22,21,.08); }
+.anystitch-panorama { display: grid; place-items: center; background: #1c2826; }
+.anystitch-panorama::before { content: ""; position: absolute; inset: -14px; background: url("assets/publications/anystitch-panorama.jpg") center / cover no-repeat; filter: blur(12px); opacity: .42; transform: scale(1.08); }
+.anystitch-panorama::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(16,25,23,.28), transparent 20%, transparent 80%, rgba(16,25,23,.28)); }
+.anystitch-panorama img { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: contain; box-shadow: 0 0 0 1px rgba(255,255,255,.22); }
 .pub-visual-diagram { background: #fbfaf7; }
 .pub-visual-diagram .pub-image { object-fit: cover; }
 .pub-state { position: absolute; left: 9px; bottom: 8px; z-index: 4; padding: 4px 7px; border-radius: 2px; background: rgba(20,27,26,.78); color: white; font-size: 8px; font-weight: 800; letter-spacing: .12em; line-height: 1; text-transform: uppercase; backdrop-filter: blur(5px); transition: opacity .3s ease, transform .3s ease; }
