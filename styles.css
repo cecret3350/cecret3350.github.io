@@ -92,41 +92,15 @@ button { font: inherit; }
 .pub-visual.is-result .pub-input { opacity: 0; transform: scale(1.015); }
 .pub-visual:focus-visible { outline: 3px solid rgba(243,111,69,.55); outline-offset: 3px; }
 .pub-visual-contain .pub-image { object-fit: cover; }
-.pub-visual-tailsteer .pub-input { object-position: center 27%; }
-.tailsteer-frame { z-index: 1; opacity: 0; object-position: center 14%; transform: scale(1.025); }
+.pub-visual-tailsteer { background: #ededed; }
+.pub-visual-tailsteer .pub-input,
+.pub-visual-tailsteer .tailsteer-frame { object-fit: contain; object-position: center; }
+.tailsteer-frame { z-index: 1; opacity: 0; transform: scale(1.01); transition-duration: .12s, .25s; }
+.publication:hover .pub-visual-tailsteer .tailsteer-frame,
+.pub-visual-tailsteer:focus-visible .tailsteer-frame,
+.pub-visual-tailsteer.is-result .tailsteer-frame { opacity: 1; transform: scale(1); }
 .tailsteer-stage { min-width: 118px; }
-.tailsteer-stage > b { position: absolute; top: 4px; right: 7px; opacity: 0; font: inherit; }
-.publication:hover .pub-visual-tailsteer .tailsteer-turn-4,
-.pub-visual-tailsteer:focus-visible .tailsteer-turn-4,
-.pub-visual-tailsteer.is-result .tailsteer-turn-4 { animation: tailsteer-turn-4 3s ease forwards; }
-.publication:hover .pub-visual-tailsteer .tailsteer-turn-7,
-.pub-visual-tailsteer:focus-visible .tailsteer-turn-7,
-.pub-visual-tailsteer.is-result .tailsteer-turn-7 { animation: tailsteer-turn-7 3s ease forwards; }
-.publication:hover .pub-visual-tailsteer .tailsteer-turn-10,
-.pub-visual-tailsteer:focus-visible .tailsteer-turn-10,
-.pub-visual-tailsteer.is-result .tailsteer-turn-10 { animation: tailsteer-turn-10 3s ease forwards; }
-.publication:hover .pub-visual-tailsteer .tailsteer-label-4,
-.pub-visual-tailsteer:focus-visible .tailsteer-label-4,
-.pub-visual-tailsteer.is-result .tailsteer-label-4 { animation: tailsteer-turn-4 3s ease forwards; }
-.publication:hover .pub-visual-tailsteer .tailsteer-label-7,
-.pub-visual-tailsteer:focus-visible .tailsteer-label-7,
-.pub-visual-tailsteer.is-result .tailsteer-label-7 { animation: tailsteer-turn-7 3s ease forwards; }
-.publication:hover .pub-visual-tailsteer .tailsteer-label-10,
-.pub-visual-tailsteer:focus-visible .tailsteer-label-10,
-.pub-visual-tailsteer.is-result .tailsteer-label-10 { animation: tailsteer-turn-10 3s ease forwards; }
-@keyframes tailsteer-turn-4 {
-  0%, 28% { opacity: 1; transform: scale(1); }
-  36%, 100% { opacity: 0; transform: scale(1.01); }
-}
-@keyframes tailsteer-turn-7 {
-  0%, 28% { opacity: 0; transform: scale(1.015); }
-  36%, 61% { opacity: 1; transform: scale(1); }
-  69%, 100% { opacity: 0; transform: scale(1.01); }
-}
-@keyframes tailsteer-turn-10 {
-  0%, 61% { opacity: 0; transform: scale(1.015); }
-  69%, 100% { opacity: 1; transform: scale(1); }
-}
+.tailsteer-stage > b { font: inherit; }
 .pub-visual-anystitch { background: #e8e4dc; }
 .pub-visual-anystitch .pub-input { transform: scale(1.01); }
 .publication:hover .pub-visual-anystitch .pub-input,
