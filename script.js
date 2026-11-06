@@ -19,17 +19,24 @@ const publicationVisuals = document.querySelectorAll('.pub-visual');
 const tailsteerVisual = document.querySelector('.pub-visual-tailsteer');
 
 if (tailsteerVisual) {
-  const frame = tailsteerVisual.querySelector('.tailsteer-frame');
+  const baselineFrame = tailsteerVisual.querySelector('.tailsteer-baseline-frame');
+  const tailsteerFrame = tailsteerVisual.querySelector('.tailsteer-result-frame');
   const label = tailsteerVisual.querySelector('.tailsteer-turn-label');
-  const sources = Array.from(
+  const baselineSources = Array.from(
+    { length: 20 },
+    (_, index) => `assets/publications/tailsteer-anime-baseline-${String(index + 1).padStart(2, '0')}.webp`,
+  );
+  const tailsteerSources = Array.from(
     { length: 20 },
     (_, index) => `assets/publications/tailsteer-anime-turn-${String(index + 1).padStart(2, '0')}.webp`,
   );
-  const images = sources.map((source) => {
+  const preload = (sources) => sources.map((source) => {
     const image = new Image();
     image.src = source;
     return image;
   });
+  const baselineImages = preload(baselineSources);
+  const tailsteerImages = preload(tailsteerSources);
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let timer;
   let playbackId = 0;
@@ -46,7 +53,8 @@ if (tailsteerVisual) {
   const stopSequence = () => {
     playbackId += 1;
     window.clearTimeout(timer);
-    frame.src = sources[0];
+    baselineFrame.src = baselineSources[0];
+    tailsteerFrame.src = tailsteerSources[0];
     label.textContent = 'Turn 1';
   };
 
@@ -56,17 +64,21 @@ if (tailsteerVisual) {
     const currentPlayback = playbackId;
 
     const showFrame = async (index) => {
-      await waitForImage(images[index]);
+      await Promise.all([
+        waitForImage(baselineImages[index]),
+        waitForImage(tailsteerImages[index]),
+      ]);
       if (currentPlayback !== playbackId) return;
 
-      frame.src = sources[index];
+      baselineFrame.src = baselineSources[index];
+      tailsteerFrame.src = tailsteerSources[index];
       label.textContent = `Turn ${index + 1}`;
 
-      if (reducedMotion.matches || index === sources.length - 1) return;
+      if (reducedMotion.matches || index === tailsteerSources.length - 1) return;
       timer = window.setTimeout(() => showFrame(index + 1), 180);
     };
 
-    showFrame(reducedMotion.matches ? sources.length - 1 : 0);
+    showFrame(reducedMotion.matches ? tailsteerSources.length - 1 : 0);
   };
 
   tailsteerVisual.addEventListener('mouseenter', startSequence);

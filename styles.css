@@ -93,13 +93,17 @@ button { font: inherit; }
 .pub-visual:focus-visible { outline: 3px solid rgba(243,111,69,.55); outline-offset: 3px; }
 .pub-visual-contain .pub-image { object-fit: cover; }
 .pub-visual-tailsteer { background: #ededed; }
-.pub-visual-tailsteer .pub-input,
-.pub-visual-tailsteer .tailsteer-frame { object-fit: contain; object-position: center; }
-.tailsteer-frame { z-index: 1; opacity: 0; transform: scale(1.01); transition-duration: .12s, .25s; }
-.publication:hover .pub-visual-tailsteer .tailsteer-frame,
-.pub-visual-tailsteer:focus-visible .tailsteer-frame,
-.pub-visual-tailsteer.is-result .tailsteer-frame { opacity: 1; transform: scale(1); }
-.tailsteer-stage { min-width: 118px; }
+.pub-visual-tailsteer .pub-input { object-fit: contain; object-position: center; }
+.tailsteer-comparison { position: absolute; inset: 0; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; opacity: 0; transform: scale(1.01); transition: opacity .12s ease, transform .25s ease; }
+.publication:hover .pub-visual-tailsteer .tailsteer-comparison,
+.pub-visual-tailsteer:focus-visible .tailsteer-comparison,
+.pub-visual-tailsteer.is-result .tailsteer-comparison { opacity: 1; transform: scale(1); }
+.tailsteer-panel { position: relative; display: grid; min-width: 0; overflow: hidden; place-items: center; background: #ededed; }
+.tailsteer-panel + .tailsteer-panel { border-left: 1px solid rgba(30,39,38,.2); }
+.tailsteer-frame { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.tailsteer-model-label { position: absolute; top: 6px; left: 6px; padding: 3px 5px; border-radius: 2px; background: rgba(37,43,42,.72); color: white; font-size: 6px; font-weight: 800; letter-spacing: .09em; line-height: 1; text-transform: uppercase; backdrop-filter: blur(4px); }
+.tailsteer-model-label-result { background: rgba(193,77,41,.82); }
+.tailsteer-stage { min-width: 47px; }
 .tailsteer-stage > b { font: inherit; }
 .pub-visual-anystitch { background: #e8e4dc; }
 .pub-visual-anystitch .pub-input { transform: scale(1.01); }

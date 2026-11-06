@@ -106,11 +106,20 @@
 
           <div class="publication-list" aria-live="polite">
             <article class="publication" data-selected="true">
-              <button class="pub-visual pub-visual-tailsteer" type="button" aria-label="TailSteer multi-turn pose editing sequence. Hover or press to play all twenty editing turns in order." aria-pressed="false">
+              <button class="pub-visual pub-visual-tailsteer" type="button" aria-label="TailSteer multi-turn pose editing comparison. Hover or press to play all twenty turns in order, with the baseline on the left and TailSteer on the right." aria-pressed="false">
                 <img class="pub-image pub-input" src="assets/publications/tailsteer-anime-source.webp" alt="" loading="lazy" />
-                <img class="pub-image tailsteer-frame" src="assets/publications/tailsteer-anime-turn-01.webp" alt="" loading="lazy" />
+                <span class="tailsteer-comparison" aria-hidden="true">
+                  <span class="tailsteer-panel">
+                    <img class="tailsteer-frame tailsteer-baseline-frame" src="assets/publications/tailsteer-anime-baseline-01.webp" alt="" />
+                    <span class="tailsteer-model-label">Baseline</span>
+                  </span>
+                  <span class="tailsteer-panel">
+                    <img class="tailsteer-frame tailsteer-result-frame" src="assets/publications/tailsteer-anime-turn-01.webp" alt="" />
+                    <span class="tailsteer-model-label tailsteer-model-label-result">TailSteer</span>
+                  </span>
+                </span>
                 <span class="pub-state pub-state-input">Input</span>
-                <span class="pub-state pub-state-result tailsteer-stage" aria-hidden="true">TailSteer · <b class="tailsteer-turn-label">Turn 1</b></span>
+                <span class="pub-state pub-state-result tailsteer-stage" aria-hidden="true"><b class="tailsteer-turn-label">Turn 1</b></span>
               </button>
               <div class="pub-details">
                 <p class="pub-meta"><span>01</span> Under Review · 2026</p>
